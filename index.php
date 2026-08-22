@@ -145,6 +145,7 @@ $lowStock = $pdo
                         <th>Name</th>
                         <th>Category</th>
                         <th>Quantity</th>
+                        <th>Stock Status</th>
                         <th>Price</th>
                         <th>Description</th>
                         <th>Actions</th>
@@ -186,6 +187,21 @@ $lowStock = $pdo
                             <?php endif; ?>
 
                         </td>
+                        <td>
+
+    <?php if ($product["quantity"] <= 5): ?>
+
+        <span class="low-stock">
+            Low Stock
+        </span>
+
+    <?php else: ?>
+
+        In Stock
+
+    <?php endif; ?>
+
+</td>
 
                         <td>
                             $<?= number_format($product["price"], 2) ?>
